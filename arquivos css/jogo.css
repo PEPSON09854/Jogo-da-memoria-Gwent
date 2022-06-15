@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-image: url(../imagens/pedra\ bruta.jpg );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+}
+
+.card-back {
+    border: 10px solid #000;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+    position: absolute;
+    border-radius: 8px;
+    background: gold;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.credito a {
+    position: absolute;
+    text-decoration: none;
+    color: azure;
+    bottom: 5px;
+    font-size: 15px;
+    right: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.credito a:hover {
+    color: #0c9c9c;
+    transition: 2s;
+}
